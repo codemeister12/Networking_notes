@@ -1,17 +1,8 @@
-# Networking_notes
-======================================================================
-Configuration(default gateway)
-======================================================================
+# How does a computer know what its IP configuration is?
 
-	• with privileges enter into CMD "ipconfig"
-  •  command "route print" This command prints out all of the gateways on the network
-  • To access Network 1 enter in "route add 192.168.5.0 mask 255.255.255.0 192.168.1.10 -p" 
-  
-  Now in the persistent routes you will see This network added
- 
-===========================================================================
-Persistent Routes:
-  Network Address          Netmask  Gateway Address  Metric
-   192.168.56.255  255.255.255.255     192.168.56.1       1
-      192.168.5.0    255.255.255.0     192.168.1.10       1
-===========================================================================
+Most likely, a computer received its IP configuration from a DHCP (Dynamic Host Configuration Protocol) server. Not only did the server give the PC an IP address, but it also told the PC where the default gateway was---and more than likely---how to find a DNS server.
+
+<a href="https://www.youtube.com/watch?v=72snZctFFtA">link</a>
+
+A DNS server stands for Domain Name System being one of the most important and overlooked parts of the Internet. Without DNS the internet would collapse. Dns is used to translate an actual name into IP address. The dot at the dot at the end of a domain name represents the root of the Interent's namespace you search for a domain name your browser and your os will first determine if they know what the IP ADDRESS is already. It could be configured on your computer or it could be in memory or cache. The os is configured to ask a resolving name server for ip addresses it does not know. The only thing that all resolving name servers should know is where to find the root name servers, and the root will reply saying that It doesn't know the ip, but it does know where to find the com name servers. The Com name servers are called the Top level Domain name servers or TLD. The resolving name servers then takes all of this information from the root name servers, puts it in it's cache then goes directly to the com TLD servers. When the resolving name servers queriest about the domain the com TLD servers reply saying that it doesn't know but it referrs the resolving name servers to the domain.com servers. The resolving name servers takes all of this information from the com TLD servers and puts it in it's cache. The set of name servers are the ANS? The COM TLD ame serverse knew where to find the ANS with the help of the Domains registar, when a domain is purchased the registrar is told which authoratative name servers that domain should use they notify the organization responsible for the TLD the registry. Telling them to update the TLD name servers</p>
+
