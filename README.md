@@ -82,3 +82,45 @@ This allows for there to be fewer configured DHCP servers in any given network, 
   
   <h2> MX record. </h2>
   >> Maps to the email server taht is specified for a specific domain. It is the record that determines how email travels from sender to recipient.
+
+# Dynamic DNS.
+
+<h2> Dynamic Dns (DDNS). </h2>
+  >> Permits lightweight and immediate updates to a local DNS database. Thisi very useful when the FQDN/hostname remains the same, but the IP addresses is able to change on a regular basis.
+     <li> It is implemented as an additional service to DNS. </li>
+     
+<h2> DDNS updating. </h2>
+  >> A method of updating traditional name servers without the intervention of an admin (no manual editing or inputting of the configuration files is required)
+     <li> A DDNS provider supplies software that will monitor the IP address of a referenced system. Once the IP address changes, the software sends an update to the proper DNS server. </li>
+     <li> DDNS is useful when access is needded to a domain whose IP addresses is being supplied dynamically by an Internet Service Provider (ISP)
+  
+
+  # Introducing network address translation
+  
+  <h3> Network address translation (NAT) solves the problem of how to route non-routable IP addresses. </h3>
+  
+  As partial effort to conserve the IPv4 address space, the private IPv4 addressing spaces were developed. These address space were removed from the public IPv4 address space and made non-routable accross public IPv4 networks.
+  
+  Being non-routable prevents the private IPv4 addresses from communicating with remote public networks. NAT very simply solves this problem. A router with NAT enabled will translate a private IP address into a routable publis IP address. When the response returns to the router, it passes the response back to the device that requested it. 
+  
+# How network address translation works.
+  <h2> The two categories of NAT. </h2>
+     <i> Static NAT (SNAT): </i> each private IP address is assigned to a specific routable public IP address. This relationship is kept and maintained by the NAT enabled router.
+   <li> When a device needs access outside of the local network, the router translates the local IP address to the assigned public IP address. When the response comes back, the router will translate the public IP address back into the local one </li>
+   <li> SNAT is not flexible and leads to scalability issues. An individual routable IP address must be kept for every device that requires to access outside of the local network </li>
+   <i> Dynamic NAT (DNAT): </i> the NAT enabled router dynamically assigns a routable IP address to devices from a pool of available public IP addresses.
+    <li> When a device need access outside of the local network, the router performs the NAT function, only the public IP address comes from a re-useable pool of public IP addresses.
+    <li> As initially designed, DNAT was more flexible than SNAT, but still led to some scalability issues. As more network traffic requires access to remote networks, the pool of available public IP addresses needs to increases or outside access cannot be achieved </li>
+    
+ <h2> Port address translation (PAT). </h2>
+    >> Pat is a type of DNAT that was developed to increase the scalability of NAT.
+       <li> When a local network device requires access to a public network, the NAT enabled router dynamically assigns the public IP address to the device with the addition of dynamically assigning a port number to the end of the public IP address </li>
+       <li> The router tracks the IP addresses and port numbers to ensure that network traffic is routed to and from the proper devices.
+       <li> PAT still requires a pool of public IP addresses, but the pool may only contain one address or it may contain several for a large private network. </li>
+       <li> This is the preferred method of implenting NAT for two reasons, less public IP addresses are required and it is also easier for admins to maintain. </li>
+       <h2> The Nat terminology. </h2>
+           <i> Inside local address: </i> a private IP address on the local network
+           <li> The private IP address: assigned to a specific deivce.
+           <i> Inside global address: </i> a public IP address referencing an inside device.
+           <li> The public IP address assigned to the inside device by the NAT enable router to allow access outside of the network. </li>
+           
