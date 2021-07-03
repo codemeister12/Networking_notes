@@ -1,0 +1,15 @@
+Computer network in data communication, a physical network node may either be a data communication equipement such as a modem, hub, bridge, or switch; or a digital telephone 
+handset, a printer or a host computer(e.g.., a router, a workstation or a server), If the network in question is a LAN or WAN, every LAN or WAN node must have a MAC address, 
+typically one for each network interface controller it possesses.
+
+note * a hub constitues a physical network node, but doesn't constitute a LAN network, since a hubbed network logically is a bus network. Analogously, a repeater or PSTN modem
+is a physical network node but not a LAN node in this sense.
+
+A digital signal is a signal that has defined levels.
+
+An analog signal is a signal that can take any value within the given limit.
+
+modulator comes from the word modulate, meaning to alter the frequency of(an electromagnetic wave or other oscillation) in accordance with the variations of a second signal, typ
+-ically one of a lower frequency.
+
+demodulator comes from the word demodulate, meaning to extract the modulating signal from it's carrier.
