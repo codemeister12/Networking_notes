@@ -123,4 +123,14 @@ This allows for there to be fewer configured DHCP servers in any given network, 
            <li> The private IP address: assigned to a specific deivce.
            <i> Inside global address: </i> a public IP address referencing an inside device.
            <li> The public IP address assigned to the inside device by the NAT enable router to allow access outside of the network. </li>
-           
+           <i> Outside global address: </i> a public IP address referencing an outside device. 
+           <li> The public IP address assigned to a device outside of the local network
+           <i> Outside local address: </i> a private IP address assigned to an outside device.
+           <li> The private IP address assigned to an outside device on the interior of the local network.
+             
+             Inside local: 192.168.0.2 
+             Inside global: 24.11.185.118:1001
+             Outside global: 74.125.28.147
+             Outside local: 192.168.0.1:2002
+             
+             
